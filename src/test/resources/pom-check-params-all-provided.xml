@@ -1,0 +1,54 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>ch.admin.bit.jeap</groupId>
+    <artifactId>truststore-maven-plugin-test</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.1-SNAPSHOT</version>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>ch.admin.bit.jeap</groupId>
+                <artifactId>truststore-maven-plugin</artifactId>
+                <version>1.0.1-SNAPSHOT</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>build-truststores</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                    <configuration>
+                        <certificateRepositoryUrl>https://testhost/scm/dst/test-certificates.git</certificateRepositoryUrl>
+                        <certificateRepositoryBranch>feature-xy</certificateRepositoryBranch>
+                        <trustStoreType>PKCS12</trustStoreType>>
+                        <trustStoreName>my-trust-store</trustStoreName>
+                        <trustStorePassword>my-password</trustStorePassword>
+                        <outputDirs>
+                            <outputDir>target/classes</outputDir>
+                            <outputDir>some/other/path</outputDir>
+                        </outputDirs>
+                        <environments>
+                            <environment>dev</environment>
+                            <environment>ref</environment>
+                            <environment>abn</environment>
+                        </environments>
+                        <includes>
+                            <include>general</include>
+                            <include>general/admin</include>
+                            <include>technology/kafka</include>
+                            <include>application/jme/provider</include>
+                        </includes>
+                        <extensions>
+                            <extension>cert</extension>
+                            <extension>pem</extension>
+                        </extensions>
+                    </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
