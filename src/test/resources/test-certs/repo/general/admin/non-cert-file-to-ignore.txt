@@ -1,0 +1,1 @@
+This file should be ignored as it does not have a valid certificate file extension.
