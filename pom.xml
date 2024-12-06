@@ -1,9 +1,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <url>https://github.com/jeap-admin-ch/jeap-truststore-maven-plugin</url>
+    <url>https://github.com/jeap-admin-ch/jeap-truststore-maven-plugin/tree/main</url>
     <scm>
-        <url>https://github.com/jeap-admin-ch/jeap-truststore-maven-plugin</url>
+        <url>https://github.com/jeap-admin-ch/jeap-truststore-maven-plugin.git</url>
     </scm>
     <developers>
         <developer>
@@ -23,7 +23,7 @@
     <parent>
         <artifactId>jeap-internal-spring-boot-parent</artifactId>
         <groupId>ch.admin.bit.jeap</groupId>
-        <version>5.2.5</version>
+        <version>5.3.0</version>
     </parent>
 
     <artifactId>truststore-maven-plugin</artifactId>
