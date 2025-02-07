@@ -5,7 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## 1.3.2- 18.12.2024
+## 1.5.0 - 07.02.2025
+
+### Changed
+
+- Updated internal parent to 5.5.0
+- Publish to maven central
+
+## 1.4.0 - 31.12.2024
+
+### Changed
+
+- Updated internal parent to 5.4.1
+
+## 1.3.2 - 18.12.2024
 
 ### Changed
 
