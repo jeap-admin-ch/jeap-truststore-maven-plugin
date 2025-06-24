@@ -53,7 +53,7 @@ public class GitCertRepo {
                         .call();
             } else {
                 log.info("No " + tokenEnvironmentPropertyName + " found in environment: using git client with system credentials to clone the repository");
-                ProcessBuilder pb = new ProcessBuilder("git", "clone", "--branch", branch, "--single-branch", uri.toString());
+                ProcessBuilder pb = new ProcessBuilder("git", "clone", "--branch", branch, "--single-branch", uri.toString(), targetDirectory.getAbsolutePath());
                 pb.directory(targetDirectory);
                 Process process = pb.start();
                 int exitCode = process.waitFor();

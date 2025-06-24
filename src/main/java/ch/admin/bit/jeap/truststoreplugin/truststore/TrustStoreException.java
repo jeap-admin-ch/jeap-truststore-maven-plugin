@@ -26,5 +26,8 @@ public class TrustStoreException extends RuntimeException {
         return new TrustStoreException("Unable to store truststore in file " + trustStoreFile.getAbsolutePath(), e);
     }
 
+    static TrustStoreException sizeCheckFailed(Exception e) {
+        return new TrustStoreException("Unable to get the size of the truststore", e);
+    }
 
 }

@@ -110,6 +110,7 @@ public class BuildTruststoresMojo extends AbstractMojo
         getLog().info("Creating truststore for environment '" + environment + "' from certificate file repository " + fileCertRepo.getRepoPath().toAbsolutePath());
         TrustStore trustStore = TrustStore.of(trustStoreType, trustStorePassword);
         fileCertRepo.streamCertFiles(environment).forEach(trustStore::addCertificate);
+        getLog().info("Created truststore with size " + trustStore.size());
         return trustStore;
     }
 

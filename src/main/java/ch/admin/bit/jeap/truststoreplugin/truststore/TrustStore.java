@@ -42,6 +42,14 @@ public class TrustStore {
         }
     }
 
+    public int size() {
+        try {
+            return keyStore.size();
+        } catch (KeyStoreException e) {
+            throw TrustStoreException.sizeCheckFailed(e);
+        }
+    }
+
     private String createAlias(X509Certificate certificate) {
         X500Principal subject = certificate.getSubjectX500Principal();
         X500Principal issuer = certificate.getIssuerX500Principal();
