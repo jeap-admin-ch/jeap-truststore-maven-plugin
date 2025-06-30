@@ -3,7 +3,6 @@ package ch.admin.bit.jeap.truststoreplugin.gitcertrepo;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import org.apache.maven.plugin.logging.Log;
-import org.apache.maven.plugin.logging.SystemStreamLog;
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.transport.UsernamePasswordCredentialsProvider;
 
@@ -34,8 +33,8 @@ public class GitCertRepo {
     private final String branch;
     private final String tokenEnvironmentPropertyName;
 
-    public static GitCertRepo of(URI uri, String branch, String tokenEnvironmentPropertyName) {
-        return new GitCertRepo(new SystemStreamLog(), uri, branch, tokenEnvironmentPropertyName);
+    public static GitCertRepo of(Log log, URI uri, String branch, String tokenEnvironmentPropertyName) {
+        return new GitCertRepo(log, uri, branch, tokenEnvironmentPropertyName);
     }
 
     @SuppressWarnings({"java:S2142", "java:S4036"})

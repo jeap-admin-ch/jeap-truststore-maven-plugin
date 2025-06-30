@@ -97,7 +97,7 @@ public class BuildTruststoresMojo extends AbstractMojo
         try {
             File tempRepoBranchDir = Files.createTempDirectory(branch).toFile();
             FileUtils.forceDeleteOnExit(tempRepoBranchDir);
-            GitCertRepo gitCertRepo = GitCertRepo.of(gitRepoUrl.toURI(), branch, tokenEnvironmentPropertyName);
+            GitCertRepo gitCertRepo = GitCertRepo.of(getLog(), gitRepoUrl.toURI(), branch, tokenEnvironmentPropertyName);
             getLog().info("Cloning git repo " + gitRepoUrl + " at branch " + branch + " to directory " + tempRepoBranchDir.getAbsolutePath());
             gitCertRepo.cloneTo(tempRepoBranchDir);
             return tempRepoBranchDir;
