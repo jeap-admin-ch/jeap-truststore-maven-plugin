@@ -10,6 +10,8 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Changed
 
 - Update parent from 5.10.2 to 5.11.0
+- update maven-api from 3.9.0 to 3.10.0
+- update commons-io from 2.17.0 to 2.19.0
 
 ## [1.15.2] - 2025-06-30
 
