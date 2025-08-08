@@ -14,11 +14,32 @@ softwareType: library
 description:
   en:
     localisedName: jeap-truststore-maven-plugin
-    shortDescription: TODO (Max. 150 characters)
+    shortDescription: Maven plugin to assemble truststores from X509 certificates stored in a Git repository
     longDescription: >
-      TODO (Min. 150 characters)
+      Maven plugin to read X509 certificates from a git repository or a local directory tree and then assemble the
+      certificates in environment specific truststores. The certificates to add to the truststores must be specified by
+      'include' declarations. For every such declaration the certificate files in the directory {include} are added to all
+      truststores while the certificate files in the directory {include}/{environment} are only added to the truststore of the
+      corresponding environment.
+
+      This plugin attempts to clone a Git repository by:
+
+      - Using the token provided as environment variable (Default `CERTIFICATES_REPO_GIT_TOKEN`) as a personal access token
+        for authentication when it is provided. This is typically used in CI/CD pipelines to access private GitHub
+        repositories.
+      - Falling back to the system-installed Git client when the token is not available. In this case, cloning relies on the
+        credentials already configured in the local environment (e.g., SSH keys, credential helpers, or Git configuration).
+
+      This dual-mode approach ensures that the cloning process works seamlessly both in automated environments (such as
+      pipelines) and in local development setups.
+
+      The plugin has one goal: build-truststores.
+
+      The plugin respects the Maven offline mode (-o, --offline).
     features:
-      - TODO
+      - Reads certificates from Git or local directories and adds them to environment-specific truststores
+      - Supports authentication via personal access token or local Git credentials
+      - Respects Maven offline mode for local usage
 legal:
   license: Apache-2.0
 maintenance:
