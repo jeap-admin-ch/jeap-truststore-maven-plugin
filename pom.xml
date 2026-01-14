@@ -36,10 +36,10 @@
 
     <properties>
         <maven.javadoc.skip>false</maven.javadoc.skip>
-        <maven-plugin.version>3.15.1</maven-plugin.version>
-        <maven.api.version>3.9.11</maven.api.version>
-        <maven-testing-harness.version>3.3.0</maven-testing-harness.version>
-        <commons-io.version>2.20.0</commons-io.version>
+        <maven-plugin.version>3.15.2</maven-plugin.version>
+        <maven.api.version>3.9.12</maven.api.version>
+        <maven-testing-harness.version>3.5.0</maven-testing-harness.version>
+        <commons-io.version>2.21.0</commons-io.version>
         <sonar.coverage.exclusions>**/GitCertRepo.java,**/BuildTruststoresMojo.java, **/TrustStoreException.java</sonar.coverage.exclusions>
     </properties>
 
