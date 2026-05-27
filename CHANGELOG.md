@@ -6,42 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 > - Spring Boot 3 maintenance (bug fixes, patches, and regular updates) continues on branch `release/springboot3`.
-> - The Spring Boot 4 upgrade process happens on the `master` branch, with the goal of releasing Spring Boot 4 compatible versions of all jeap components in a single major release.
 
-## [2.5.0-alpha-springboot4] - 2026-05-19
-
-### Changed
-
-- Update parent from 7.0.7-alpha-springboot4 to 7.0.9-alpha-springboot4
-
-## [2.4.0-alpha-springboot4] - 2026-05-06
+## [3.0.0] - 2026-05-27
 
 ### Changed
-
-- Update parent from 7.0.6-alpha-springboot4 to 7.0.7-alpha-springboot4
-
-## [2.3.0-alpha-springboot4] - 2026-04-24
-
-### Changed
-
-- Update parent from 7.0.5-alpha-springboot4 to 7.0.6-alpha-springboot4
-
-## [2.2.0-alpha-springboot4] - 2026-04-23
-
-### Changed
-
-- Update parent from 7.0.4-alpha-springboot4 to 7.0.5-alpha-springboot4
-
-## [2.1.0-alpha-springboot4] - 2026-04-23
-
-### Changed
-
-- Update parent from 7.0.0-alpha-springboot4 to 7.0.4-alpha-springboot4
-
-## [2.0.0] - 2026-04-16
-
-### Changed
-- Update parent from 6.0.3 to 7.0.0-alpha-springboot4
+- Official release with spring boot 4
 
 ## [1.43.0] - 2026-04-16
 
