@@ -37,9 +37,9 @@
     <properties>
         <maven.javadoc.skip>false</maven.javadoc.skip>
         <maven-plugin.version>3.15.2</maven-plugin.version>
-        <maven.api.version>3.9.14</maven.api.version>
+        <maven.api.version>3.9.16</maven.api.version>
         <maven-testing-harness.version>3.5.1</maven-testing-harness.version>
-        <commons-io.version>2.21.0</commons-io.version>
+        <commons-io.version>2.22.0</commons-io.version>
         <!-- Pin plexus-utils due to CVE-2025-67030 -->
         <plexus-utils.version>4.0.3</plexus-utils.version>
         <sonar.coverage.exclusions>**/GitCertRepo.java,**/BuildTruststoresMojo.java, **/TrustStoreException.java</sonar.coverage.exclusions>
