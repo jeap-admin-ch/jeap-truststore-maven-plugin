@@ -1,41 +1,36 @@
-# jeap truststore maven plugin
+# jeap-truststore-maven-plugin
 
-Maven plugin to read X509 certificates from a git repository or a local directory tree and then assemble the
-certificates in environment specific truststores. The certificates to add to the truststores must be specified by
-'include' declarations. For every such declaration the certificate files in the directory {include} are added to all
-truststores while the certificate files in the directory {include}/{environment} are only added to the truststore of the
-corresponding environment.
+`jeap-truststore-maven-plugin` reads X.509 certificates from a Git repository or a local directory
+tree, filters them by configurable criteria, and assembles them into environment-specific Java
+truststores (`JKS` or `PKCS12`) at build time. This lets a microservice derive its truststores from a
+centrally managed certificate repository, so expiring certificates can be rolled out across services
+without touching each service's source.
 
-This plugin attempts to clone a Git repository by:
+* Single goal `build-truststores` bound to the `generate-resources` phase
+* Sources certificates from a Git repository (`certificateRepositoryUrl`) or a local directory
+  (`certificateRepositoryDir`)
+* Builds one truststore per configured environment, with shared and environment-specific certificates
+* Authenticates Git clones via a personal-access-token environment variable, or falls back to the
+  system Git client (SSH keys, credential helpers)
+* Respects Maven offline mode (`-o`, `--offline`)
 
-- Using the token provided as environment variable (Default `CERTIFICATES_REPO_GIT_TOKEN`) as a personal access token
-  for authentication when it is provided. This is typically used in CI/CD pipelines to access private GitHub
-  repositories.
-- Falling back to the system-installed Git client when the token is not available. In this case, cloning relies on the
-  credentials already configured in the local environment (e.g., SSH keys, credential helpers, or Git configuration).
+## Documentation
 
-This dual-mode approach ensures that the cloning process works seamlessly both in automated environments (such as
-pipelines) and in local development setups.
+Start with [Getting started](docs/getting-started.md), then follow the links below.
 
-The plugin has one goal: build-truststores.
+| Topic                                                  | File                                                       |
+|--------------------------------------------------------|------------------------------------------------------------|
+| Getting started (add the plugin, build a truststore)   | [docs/getting-started.md](docs/getting-started.md)         |
+| Goal & configuration reference                         | [docs/configuration.md](docs/configuration.md)             |
+| Certificate repository layout & filtering              | [docs/certificate-repository.md](docs/certificate-repository.md) |
 
-The plugin respects the Maven offline mode (-o, --offline).
+## Modules
 
-## Plugin configuration
+Group id for the plugin is `ch.admin.bit.jeap`. The version is managed by the jEAP Spring Boot parent.
 
-| parameter                    | description                                                                                                              | default                     |
-|------------------------------|--------------------------------------------------------------------------------------------------------------------------|-----------------------------|
-| certificateRepositoryUrl     | URL of the git repository to fetch the certificates from                                                                 |                             |
-| certificateRepositoryBranch  | Name of the git repository branch to fetch the certificates from                                                         | master                      |
-| certificateRepositoryDir     | Path to a local directory tree to fetch the certificates from                                                            |                             |
-| extensions.extension         | Only consider certificate files ending with one of the provided extensions                                               | cert, cer, crt, pem         |
-| includes.include             | Only consider certificates in directories matching the given include paths and their environment specific subdirectories | general                     |
-| environments.environment     | Only create truststores for the given environments                                                                       | dev, ref, abn, prod         |
-| trustStoreName               | Truststore base name, will be complemented with the corresponding environment suffix                                     | truststore                  |
-| trustStorePassword           | Password to create the trustore with                                                                                     | changeit                    |
-| trustStoreType               | Type of the truststore to create, one of JKS or PKCS12                                                                   | JKS                         |
-| outputDirs.outputDir         | Write the truststores to the given directories                                                                           | target/classes              |
-| tokenEnvironmentPropertyName | The name of the environment property containing the token to access the git repository containing the certificates       | CERTIFICATES_REPO_GIT_TOKEN |
+| Module                   | Purpose                                                                    |
+|--------------------------|----------------------------------------------------------------------------|
+| `truststore-maven-plugin`| Maven plugin that assembles environment-specific truststores from X.509 certificates |
 
 ## Changes
 
@@ -51,4 +46,3 @@ for more information.
 ## License
 
 This repository is Open Source Software licensed under the [Apache License 2.0](./LICENSE).
-
