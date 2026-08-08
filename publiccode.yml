@@ -1,8 +1,8 @@
 publiccodeYmlVersion: 0.4.0
 name: jeap-truststore-maven-plugin
 applicationSuite: jEAP
-softwareVersion: 3.17.0
-releaseDate: 2026-08-04
+softwareVersion: 3.18.0
+releaseDate: 2026-08-08
 url: "https://github.com/jeap-admin-ch/jeap-truststore-maven-plugin.git"
 landingURL: "https://github.com/jeap-admin-ch/jeap"
 platforms:
