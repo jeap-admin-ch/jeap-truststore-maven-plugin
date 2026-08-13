@@ -36,8 +36,6 @@
 
     <properties>
         <maven.javadoc.skip>false</maven.javadoc.skip>
-        <maven-plugin.version>3.15.2</maven-plugin.version>
-        <!-- Pin plexus-utils due to CVE-2025-67030 -->
         <sonar.coverage.exclusions>**/GitCertRepo.java,**/BuildTruststoresMojo.java, **/TrustStoreException.java</sonar.coverage.exclusions>
     </properties>
 
@@ -117,7 +115,6 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-plugin-plugin</artifactId>
-                    <version>${maven-plugin.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
