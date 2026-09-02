@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [3.33.0] - 2026-09-02
+
+### Changed
+
+- Update parent from 9.2.0 to 9.2.1
+
 ## [3.32.0] - 2026-08-29
 
 ### Changed
