@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [3.44.1] - 2026-09-17
+
+### Changed
+
+- Trigger the jEAP parent dependency update after a release, so that new plugin versions reach jeap-spring-boot-parent
+
 ## [3.44.0] - 2026-09-17
 
 ### Changed
